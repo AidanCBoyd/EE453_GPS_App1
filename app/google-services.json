@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1017781751214",
+    "firebase_url": "https://gps-app-66558.firebaseio.com",
+    "project_id": "gps-app-66558",
+    "storage_bucket": "gps-app-66558.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017781751214:android:d0ecef2f531f2a2a",
+        "android_client_info": {
+          "package_name": "com.college.boyd.gps_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017781751214-0gta4i43u91078skm00ggv90crnk3aii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7xEPlWKlcCfsIzsiJ2bCnBPq991XcxIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017781751214:android:f9259cadc48b97a2",
+        "android_client_info": {
+          "package_name": "com.ee453.aidandaire.ee453_gps_app1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017781751214-0gta4i43u91078skm00ggv90crnk3aii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7xEPlWKlcCfsIzsiJ2bCnBPq991XcxIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
