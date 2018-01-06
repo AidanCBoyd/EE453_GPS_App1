@@ -58,9 +58,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //collectLocations();
                 for(DataSnapshot dsp : dataSnapshot.getChildren()) {
                     System.out.println();
-                    HashMap<String, Long> o = (HashMap<String, Long>) dsp.getValue();
+                    HashMap<String, Double> o = (HashMap<String, Double>) dsp.getValue();
                     String key = dsp.getKey();
-                    LocationData locDat = new LocationData((double) o.get("latitude"), (double) o.get("longitude"));
+                    LocationData locDat = new LocationData(o.get("latitude"), o.get("longitude"));
                     if(!markers.containsKey(key)) {
                         markers.put(key,locDat);
                     }
@@ -93,7 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
         LatLng engBuilding = new LatLng(53.283681, -9.063978);
         mMap.addMarker(new MarkerOptions().position(engBuilding).title("Engineering Building NUIG").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
-        float zoomLevel = 17.0f;
+        float zoomLevel = 7.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(engBuilding,zoomLevel));
     }
 
@@ -107,14 +107,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         // Write a message to the database
-        LocationData locationDatabase = new LocationData(location.getLatitude(), location.getLongitude());
+        LocationData locationDatabase = new LocationData(Math.round(location.getLatitude() * 1000000.0) / 1000000.0, Math.round(location.getLongitude() * 1000000.0) / 1000000.0);
         Date now = new Date();
         SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
         String value = dt.format(now);
         //mMap.clear();
         LatLng newLocation = new LatLng(location.getLatitude(),location.getLongitude());
         mMap.addMarker(new MarkerOptions().position(newLocation).title(value).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
-        float zoomLevel = 1.0f;
+        float zoomLevel = 7.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLocation,zoomLevel));
         myRef.child(value).setValue(locationDatabase);
     }
